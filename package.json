@@ -12,7 +12,8 @@
     "@babel/preset-env": "^7.3.1"
   },
   "scripts": {
-    "prepublish": "babel usePromise.js --out-file index.js",
+    "build": "babel usePromise.js --out-file index.js",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
