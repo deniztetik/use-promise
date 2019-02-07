@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const usePromise = (fn, watch = []) => {
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
