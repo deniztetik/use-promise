@@ -1,6 +1,6 @@
-# use-local-storage
+# use-promise
 
-A React Hook for using local storage and keeping it in sync with your app
+A React Hook that takes a promise which will be executed as an effect, with optional watchers
 
 ## Installation Instructions
 
@@ -15,13 +15,18 @@ or
 ```jsx
 import React from "react";
 
-import useLocalStorage from "@aslan-hooks/use-promise";
+import usePromise from "@aslan-hooks/use-promise";
+
+const fakeAPICall = () =>
+  new Promise(resolve => {
+    setTimeout(() => resolve("Text"), 1000);
+  });
 
 const Component = () => {
-  const [text, setText] = useLocalStorage("initialValue");
+  const [loading, result, error, refresh] = usePromise(fakeAPICall);
 
   return (
-    <input type="text" value={text} onChange={e => setText(e.target.value)} />
+    <div>{loading ? 'Loading...' : `The result is ${result}`</div>
   );
 };
 ```
