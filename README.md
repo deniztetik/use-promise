@@ -25,8 +25,6 @@ const fakeAPICall = () =>
 const Component = () => {
   const [loading, result, error, refresh] = usePromise(fakeAPICall);
 
-  return (
-    <div>{loading ? 'Loading...' : `The result is ${result}`</div>
-  );
+  return <div>{loading ? "Loading..." : `The result is ${result}`}</div>;
 };
 ```
