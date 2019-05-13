@@ -1,6 +1,3 @@
-interface IUsePromise {
-  loading: boolean;
-  result: any;
-  error: Error | null;
-  refresh: Function;
-}
+import usePromise from "./usePromise";
+
+export default usePromise;
