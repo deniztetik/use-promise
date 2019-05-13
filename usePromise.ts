@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const usePromise = (fn: () => any, watch = []): IUsePromise => {
+const usePromise = (fn: () => any, watch = []) => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
