@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = require("react");
 
@@ -73,7 +73,7 @@ var usePromise = function usePromise(fn) {
               return _context.stop();
           }
         }
-      }, _callee, this, [[0, 7, 10, 13]]);
+      }, _callee, null, [[0, 7, 10, 13]]);
     }));
 
     return function refresh() {
@@ -84,8 +84,13 @@ var usePromise = function usePromise(fn) {
   (0, _react.useEffect)(function () {
     refresh();
   }, watch);
-  return [loading, result, error, refresh];
+  return {
+    loading: loading,
+    result: result,
+    error: error,
+    refresh: refresh
+  };
 };
 
 var _default = usePromise;
-exports.default = _default;
+exports["default"] = _default;

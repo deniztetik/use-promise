@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const usePromise = (fn, watch = []) => {
+const usePromise = (fn: () => any, watch = []): IUsePromise => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ const usePromise = (fn, watch = []) => {
     refresh();
   }, watch);
 
-  return [loading, result, error, refresh];
+  return { loading, result, error, refresh };
 };
 
 export default usePromise;
